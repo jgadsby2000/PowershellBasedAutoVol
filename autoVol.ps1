@@ -42,7 +42,7 @@ if($h){
 
 
 $filepath = -join(".\PlaceMemFilesHere\", $filename)
-$volPath = ".\vol.py"
+$volPath = "..\vol.py"
 if($p){
   $outFolderName = -join((Get-Item $filepath ).Basename, (Get-Date -Format "ddMMyyHHmm"),"PID$p")
 }else{
