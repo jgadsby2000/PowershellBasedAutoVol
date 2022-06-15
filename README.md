@@ -19,7 +19,7 @@ To run, open a cmd window, navigate to the project folder and run... <br />
 ``` powershell.exe -executionpolicy bypass .\autoVol.ps1 [PARAMETERS] ```  <br /> <br />
 This will load the help module and detail how the program is run.
 
-### Parameters for running script
+## Parameters
 #### -h
 Help
 #### -f "FILENAME"
