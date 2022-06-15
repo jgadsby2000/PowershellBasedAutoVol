@@ -14,6 +14,8 @@ This program runs plugins from volatility3 on memory images, and pipes those out
 ``` git clone https://github.com/volatilityfoundation/volatility3 ```
 
 ## Usage Guide
+Place memory files to analyse in the `\PlaceMemFilesHere\` subdirectory once installed. 
+
 It is best practise to run this script from cmd line to pass the required parameters, however this may not be allowed due to security settings on your computer.
 To run, open a cmd window, navigate to the project folder and run... <br />
 ``` powershell.exe -executionpolicy bypass .\autoVol.ps1 [PARAMETERS] ```  <br /> <br />
