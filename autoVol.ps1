@@ -33,10 +33,19 @@ $text = @"
                                                                                        
 "@
 Write-Host "$text"
+$help = @"
+autoVol.ps1 HELP PAGE `n
+Call this ps1 using powershell and apply the following parameters. `n
+Parameters:
+-f (Filename): Specify the filename of the memory image you want to analyse (include file extension). Ensure it is placed in the \PlaceMemFilesHere subdirectory.
+-p (Process ID): Specify the Process ID you want to analyse
+-h (help): Display this view  `n `n
+"@
+
 
 ##### Help Screen Message #####
 if($h){
-  Write-Host "*INSERT HELP SCREEN HERE*"
+  Write-Host "$help"
   exit
 }
 

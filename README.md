@@ -17,7 +17,9 @@ This program runs plugins from volatility3 on memory images, and pipes those out
 Place memory files to analyse in the `\PlaceMemFilesHere\` subdirectory once installed. 
 
 Run the script in powershell using the parameters listed below. For example... <br />
-``` .\autoVol.ps1 -f "FILENAME" -p "PROCCESS ID" ```
+``` .\autoVol.ps1 -f "FILENAME" ```
+``` .\autoVol.ps1 -f "FILENAME" -p "PROCESS ID" ```
+``` .\autoVol.ps1 -h ```
 
 ## Parameters
 #### -h
