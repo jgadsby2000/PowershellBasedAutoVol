@@ -51,6 +51,10 @@ if($h){
 
 
 $filepath = -join(".\PlaceMemFilesHere\", $filename)
+if(-Not (Test-Path -Path $filepath -PathType Leaf)) {
+    Write-Host "File does not exist. Exiting..."
+    exit
+}
 $volPath = "..\vol.py"
 if($p){
   $outFolderName = -join((Get-Item $filepath ).Basename, (Get-Date -Format "ddMMyyHHmm"),"PID$p")
@@ -61,10 +65,7 @@ $outFolderLoc = -join(".\output\", $outFolderName)
 mkdir $outFolderLoc -ea 0
 
 
-if(-Not (Test-Path -Path $filepath -PathType Leaf)) {
-    Write-Host "File does not exist. Exiting..."
-    exit
-}
+
 
 
 if($p){
