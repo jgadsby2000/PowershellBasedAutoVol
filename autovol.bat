@@ -1,0 +1,1 @@
+powershell -executionpolicy bypass -File C:\volatility3\PowershellBasedAutoVol\autoVol.ps1 %*
