@@ -43,19 +43,21 @@ Parameters:
 "@
 
 
-##### Help Screen Message #####
+## Help Parameter
 if($h){
   Write-Host "$help"
   exit
 }
 
-
+## Test File Path
 $filepath = -join(".\PlaceMemFilesHere\", $filename)
 if(-Not (Test-Path -Path $filepath -PathType Leaf)) {
     Write-Host "File does not exist. Exiting..."
     exit
 }
 $volPath = "..\vol.py"
+
+## Create Folder for output
 if($p){
   $outFolderName = -join((Get-Item $filepath ).Basename, (Get-Date -Format "ddMMyyHHmm"),"PID$p")
 }else{
@@ -64,10 +66,7 @@ if($p){
 $outFolderLoc = -join(".\output\", $outFolderName)
 mkdir $outFolderLoc -ea 0
 
-
-
-
-
+## Execution (if process ID specified)
 if($p){
   $outFolderName = -join((Get-Item $filepath ).Basename, (Get-Date -Format "ddMMyyHHmm"),"PID$p")
   Write-Host "Now running output for Process ID $p"
@@ -91,6 +90,7 @@ if($p){
   cmd.exe /c "python $volPath -f $filepath windows.cmdline.CmdLine --pid $p > $outFolderLoc\cmdline.txt"
 
 }else{
+  ## Execution if Process ID not specified
   $outFolderName = -join((Get-Item $filepath ).Basename, (Get-Date -Format "ddMMyyHHmm"))
   Write-Host "Now Running general volatility scan \n"
 
@@ -146,4 +146,5 @@ if($p){
   cmd.exe /c "python $volPath -f $filepath windows.handles.Handles > $outFolderLoc\handles.txt"
 }
 
-Write-Host "Complete. Output Folder Location:'$outFolderLoc'" 
+## Complete Message
+Write-Host "Volatility Output Complete. Output Folder Location:'$outFolderLoc'" 
